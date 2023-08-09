@@ -19,6 +19,8 @@ class _AnimationControllerStatusState extends State<AnimationControllerStatus>
     super.initState();
     _animationController =
         AnimationController(vsync: this, duration: const Duration(seconds: 2));
+    // ! Tween is an object that defines a mapping between of value of one type double to a range of of another types (Color, Size ,Rect)
+    // ! which used to animate the visual appearence of widgets int the app
     _animation = Tween<double>(begin: 0, end: 10).animate(_animationController)
       ..addListener(() {
         setState(() {});
