@@ -3,6 +3,8 @@ import 'package:flutter_tutorial_animation/animation_and_tween.dart';
 import 'package:flutter_tutorial_animation/animation_controller_status.dart';
 import 'package:flutter_tutorial_animation/animation_curves.dart';
 
+import 'animated_align_widget.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -60,7 +62,11 @@ class MyHomePAge extends StatelessWidget {
           SizedBox(
             height: 5,
           ),
-          animationCurvesWidget(context)
+          animationCurvesWidget(context),
+          SizedBox(
+            height: 5,
+          ),
+          animatedalignDemoWidget (context)
         ]),
       ),
     );
@@ -96,3 +102,13 @@ Widget animationCurvesWidget(BuildContext context) => ElevatedButton(
           ));
     },
     child: Text("Animation Curves"));
+
+Widget animatedalignDemoWidget(BuildContext context) => ElevatedButton(
+    onPressed: () {
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => AnimatedAlignDemoScreen(),
+          ));
+    },
+    child: Text("Animation Align Demo"));
