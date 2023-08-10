@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class AnimationAndTween extends StatefulWidget {
-  const AnimationAndTween({super.key});
+class AnimationAndTweenScreen extends StatefulWidget {
+  const AnimationAndTweenScreen({super.key});
 
   @override
-  State<AnimationAndTween> createState() => _AnimationAndTweenState();
+  State<AnimationAndTweenScreen> createState() => _AnimationAndTweenState();
 }
 
-class _AnimationAndTweenState extends State<AnimationAndTween>
+class _AnimationAndTweenState extends State<AnimationAndTweenScreen>
     with SingleTickerProviderStateMixin {
   late AnimationController _animationController;
 

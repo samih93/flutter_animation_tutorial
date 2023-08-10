@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 
-class AnimationControllerStatus extends StatefulWidget {
-  const AnimationControllerStatus({super.key});
+class AnimationControllerStatusScreen extends StatefulWidget {
+  const AnimationControllerStatusScreen({super.key});
 
   @override
-  State<AnimationControllerStatus> createState() =>
+  State<AnimationControllerStatusScreen> createState() =>
       _AnimationControllerStatusState();
 }
 
-class _AnimationControllerStatusState extends State<AnimationControllerStatus>
+class _AnimationControllerStatusState
+    extends State<AnimationControllerStatusScreen>
     with SingleTickerProviderStateMixin {
   late AnimationController _animationController;
   late Animation<double> _animation;

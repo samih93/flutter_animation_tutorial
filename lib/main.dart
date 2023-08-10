@@ -14,6 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         // This is the theme of your application.
@@ -34,7 +35,64 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: AnimationCurvesScreen(),
+      home: MyHomePAge(),
     );
   }
 }
+
+class MyHomePAge extends StatelessWidget {
+  const MyHomePAge({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Flutter Animation Course"),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 10),
+        child: ListView(children: [
+          animationControllerStatusWidget(context),
+          SizedBox(
+            height: 5,
+          ),
+          animationAndTweenWidget(context),
+          SizedBox(
+            height: 5,
+          ),
+          animationCurvesWidget(context)
+        ]),
+      ),
+    );
+  }
+}
+
+Widget animationControllerStatusWidget(BuildContext context) => ElevatedButton(
+    onPressed: () {
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => AnimationControllerStatusScreen(),
+          ));
+    },
+    child: Text("Animation Controller status"));
+
+Widget animationAndTweenWidget(BuildContext context) => ElevatedButton(
+    onPressed: () {
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => AnimationAndTweenScreen(),
+          ));
+    },
+    child: Text("Animation And Tween"));
+
+Widget animationCurvesWidget(BuildContext context) => ElevatedButton(
+    onPressed: () {
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => AnimationCurvesScreen(),
+          ));
+    },
+    child: Text("Animation Curves"));
