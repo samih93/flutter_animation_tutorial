@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_tutorial_animation/animation_and_tween.dart';
 import 'package:flutter_tutorial_animation/animation_controller_status.dart';
+import 'package:flutter_tutorial_animation/animation_curves.dart';
 
 void main() {
   runApp(const MyApp());
@@ -33,7 +34,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: AnimationAndTween(),
+      home: AnimationCurvesScreen(),
     );
   }
 }
