@@ -3,6 +3,7 @@ import 'package:flutter_tutorial_animation/implicit_animation/animated_container
 import 'package:flutter_tutorial_animation/animation_and_tween_screen.dart';
 import 'package:flutter_tutorial_animation/animation_controller_status_screen.dart';
 import 'package:flutter_tutorial_animation/animation_curves_screen.dart';
+import 'package:flutter_tutorial_animation/implicit_animation/animated_default_text_style.dart';
 
 import 'implicit_animation/animated_align_widget_screen.dart';
 
@@ -72,6 +73,10 @@ class MyHomePAge extends StatelessWidget {
             height: 5,
           ),
           animatedContainerDemoWidget(context),
+          SizedBox(
+            height: 5,
+          ),
+          animatedDefaultTextStyleWidget(context),
         ]),
       ),
     );
@@ -127,3 +132,13 @@ Widget animatedContainerDemoWidget(BuildContext context) => ElevatedButton(
           ));
     },
     child: Text("Animation Container "));
+
+Widget animatedDefaultTextStyleWidget(BuildContext context) => ElevatedButton(
+    onPressed: () {
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => AnimatedDefaultTextStyleScreen(),
+          ));
+    },
+    child: Text("Animation DefaultTextStyle "));
