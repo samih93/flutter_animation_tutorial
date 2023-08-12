@@ -31,7 +31,7 @@ class _AnimatedDefaultTextStyleExampleState
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Animated Container Example"),
+        title: Text("Animated Default Text Style Example"),
       ),
       body: Center(
           child: Column(

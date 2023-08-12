@@ -6,6 +6,7 @@ import 'package:flutter_tutorial_animation/animation_curves_screen.dart';
 import 'package:flutter_tutorial_animation/implicit_animation/animated_default_text_style.dart';
 
 import 'implicit_animation/animated_align_widget_screen.dart';
+import 'implicit_animation/animated_opacity_demo.dart';
 
 void main() {
   runApp(const MyApp());
@@ -77,6 +78,10 @@ class MyHomePAge extends StatelessWidget {
             height: 5,
           ),
           animatedDefaultTextStyleWidget(context),
+          SizedBox(
+            height: 5,
+          ),
+          animatedOpacityWidget(context),
         ]),
       ),
     );
@@ -142,3 +147,13 @@ Widget animatedDefaultTextStyleWidget(BuildContext context) => ElevatedButton(
           ));
     },
     child: Text("Animation DefaultTextStyle "));
+
+Widget animatedOpacityWidget(BuildContext context) => ElevatedButton(
+    onPressed: () {
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => AnimatedOpacityScreen(),
+          ));
+    },
+    child: Text("Animation Opacity "));
