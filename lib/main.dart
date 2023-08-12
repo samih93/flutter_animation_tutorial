@@ -4,6 +4,7 @@ import 'package:flutter_tutorial_animation/animation_and_tween_screen.dart';
 import 'package:flutter_tutorial_animation/animation_controller_status_screen.dart';
 import 'package:flutter_tutorial_animation/animation_curves_screen.dart';
 import 'package:flutter_tutorial_animation/implicit_animation/animated_default_text_style.dart';
+import 'package:flutter_tutorial_animation/implicit_animation/animated_padding_screen.dart';
 
 import 'implicit_animation/animated_align_widget_screen.dart';
 import 'implicit_animation/animated_opacity_demo.dart';
@@ -82,6 +83,10 @@ class MyHomePAge extends StatelessWidget {
             height: 5,
           ),
           animatedOpacityWidget(context),
+          SizedBox(
+            height: 5,
+          ),
+          animatedPaddingWidget(context),
         ]),
       ),
     );
@@ -157,3 +162,13 @@ Widget animatedOpacityWidget(BuildContext context) => ElevatedButton(
           ));
     },
     child: Text("Animation Opacity "));
+
+Widget animatedPaddingWidget(BuildContext context) => ElevatedButton(
+    onPressed: () {
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => AnimatedPaddingScreen(),
+          ));
+    },
+    child: Text("Animation Padding screen "));
