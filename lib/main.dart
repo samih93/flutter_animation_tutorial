@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_tutorial_animation/animation_and_tween.dart';
-import 'package:flutter_tutorial_animation/animation_controller_status.dart';
-import 'package:flutter_tutorial_animation/animation_curves.dart';
+import 'package:flutter_tutorial_animation/implicit_animation/animated_container_screen.dart';
+import 'package:flutter_tutorial_animation/animation_and_tween_screen.dart';
+import 'package:flutter_tutorial_animation/animation_controller_status_screen.dart';
+import 'package:flutter_tutorial_animation/animation_curves_screen.dart';
 
-import 'animated_align_widget.dart';
+import 'implicit_animation/animated_align_widget_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -66,7 +67,11 @@ class MyHomePAge extends StatelessWidget {
           SizedBox(
             height: 5,
           ),
-          animatedalignDemoWidget (context)
+          animatedalignDemoWidget(context),
+          SizedBox(
+            height: 5,
+          ),
+          animatedContainerDemoWidget(context),
         ]),
       ),
     );
@@ -112,3 +117,13 @@ Widget animatedalignDemoWidget(BuildContext context) => ElevatedButton(
           ));
     },
     child: Text("Animation Align Demo"));
+
+Widget animatedContainerDemoWidget(BuildContext context) => ElevatedButton(
+    onPressed: () {
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => AnimatedContainerScreen(),
+          ));
+    },
+    child: Text("Animation Container "));
