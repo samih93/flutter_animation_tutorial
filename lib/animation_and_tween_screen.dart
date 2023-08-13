@@ -35,7 +35,7 @@ class _AnimationAndTweenState extends State<AnimationAndTweenScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Animation Color status")),
+      appBar: AppBar(title: const Text("Animation And Tween status")),
       body: Center(
           child: Column(children: [
         Text(

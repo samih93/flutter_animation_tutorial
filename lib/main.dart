@@ -8,6 +8,7 @@ import 'package:flutter_tutorial_animation/implicit_animation/animated_padding_s
 
 import 'implicit_animation/animated_align_widget_screen.dart';
 import 'implicit_animation/animated_opacity_demo.dart';
+import 'implicit_animation/animated_physical_model_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -87,6 +88,10 @@ class MyHomePAge extends StatelessWidget {
             height: 5,
           ),
           animatedPaddingWidget(context),
+          SizedBox(
+            height: 5,
+          ),
+          animatedPhysicalWidget(context),
         ]),
       ),
     );
@@ -172,3 +177,13 @@ Widget animatedPaddingWidget(BuildContext context) => ElevatedButton(
           ));
     },
     child: Text("Animation Padding screen "));
+
+Widget animatedPhysicalWidget(BuildContext context) => ElevatedButton(
+    onPressed: () {
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => AnimatedPhysicalModelScreen(),
+          ));
+    },
+    child: Text("Animated physical screen "));

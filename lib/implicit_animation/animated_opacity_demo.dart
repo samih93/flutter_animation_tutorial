@@ -14,7 +14,7 @@ class _AnimatedOpacityScreenState extends State<AnimatedOpacityScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Animated Container Example"),
+        title: Text("Animated Opacity Example"),
       ),
       body: Center(
           child: Column(
