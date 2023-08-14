@@ -12,6 +12,7 @@ import 'implicit_animation/animated_align_widget_screen.dart';
 import 'implicit_animation/animated_opacity_demo.dart';
 import 'implicit_animation/animated_physical_model_screen.dart';
 import 'implicit_animation/animated_positioned_directional_screen.dart';
+import 'implicit_animation/animated_switcher_Screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -107,6 +108,10 @@ class MyHomePAge extends StatelessWidget {
             height: 5,
           ),
           animatedCrossFadeWidget(context),
+          SizedBox(
+            height: 5,
+          ),
+          animatedSwitcherWidget(context),
         ]),
       ),
     );
@@ -233,3 +238,13 @@ Widget animatedCrossFadeWidget(BuildContext context) => ElevatedButton(
           ));
     },
     child: Text("Animated Cross Fade "));
+
+Widget animatedSwitcherWidget(BuildContext context) => ElevatedButton(
+    onPressed: () {
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => AnimatedSwitcherScreen(),
+          ));
+    },
+    child: Text("Animated Switcher"));
