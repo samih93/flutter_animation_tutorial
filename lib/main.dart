@@ -3,6 +3,7 @@ import 'package:flutter_tutorial_animation/implicit_animation/animated_container
 import 'package:flutter_tutorial_animation/animation_and_tween_screen.dart';
 import 'package:flutter_tutorial_animation/animation_controller_status_screen.dart';
 import 'package:flutter_tutorial_animation/animation_curves_screen.dart';
+import 'package:flutter_tutorial_animation/implicit_animation/animated_cross_Fade.dart';
 import 'package:flutter_tutorial_animation/implicit_animation/animated_default_text_style.dart';
 import 'package:flutter_tutorial_animation/implicit_animation/animated_padding_screen.dart';
 import 'package:flutter_tutorial_animation/implicit_animation/animated_positionned_screen.dart';
@@ -102,6 +103,10 @@ class MyHomePAge extends StatelessWidget {
             height: 5,
           ),
           animatedPositionedDirectionalWidget(context),
+          SizedBox(
+            height: 5,
+          ),
+          animatedCrossFadeWidget(context),
         ]),
       ),
     );
@@ -218,3 +223,13 @@ Widget animatedPositionedDirectionalWidget(BuildContext context) =>
               ));
         },
         child: Text("Animated Positioned Directional "));
+
+Widget animatedCrossFadeWidget(BuildContext context) => ElevatedButton(
+    onPressed: () {
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => AnimatedCrossFadeScreen(),
+          ));
+    },
+    child: Text("Animated Cross Fade "));
