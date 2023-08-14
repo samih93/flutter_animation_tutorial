@@ -9,6 +9,7 @@ import 'package:flutter_tutorial_animation/implicit_animation/animated_padding_s
 import 'package:flutter_tutorial_animation/implicit_animation/animated_positionned_screen.dart';
 
 import 'implicit_animation/animated_align_widget_screen.dart';
+import 'implicit_animation/animated_list_screen.dart';
 import 'implicit_animation/animated_opacity_demo.dart';
 import 'implicit_animation/animated_physical_model_screen.dart';
 import 'implicit_animation/animated_positioned_directional_screen.dart';
@@ -112,6 +113,10 @@ class MyHomePAge extends StatelessWidget {
             height: 5,
           ),
           animatedSwitcherWidget(context),
+          SizedBox(
+            height: 5,
+          ),
+          animatedListWidget(context),
         ]),
       ),
     );
@@ -248,3 +253,13 @@ Widget animatedSwitcherWidget(BuildContext context) => ElevatedButton(
           ));
     },
     child: Text("Animated Switcher"));
+
+Widget animatedListWidget(BuildContext context) => ElevatedButton(
+    onPressed: () {
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => AnimatedListScreen(),
+          ));
+    },
+    child: Text("Animated List "));
