@@ -10,6 +10,7 @@ import 'package:flutter_tutorial_animation/implicit_animation/animated_positionn
 import 'implicit_animation/animated_align_widget_screen.dart';
 import 'implicit_animation/animated_opacity_demo.dart';
 import 'implicit_animation/animated_physical_model_screen.dart';
+import 'implicit_animation/animated_positioned_directional_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -97,6 +98,10 @@ class MyHomePAge extends StatelessWidget {
             height: 5,
           ),
           animatedPositionedWidget(context),
+          SizedBox(
+            height: 5,
+          ),
+          animatedPositionedDirectionalWidget(context),
         ]),
       ),
     );
@@ -202,3 +207,14 @@ Widget animatedPositionedWidget(BuildContext context) => ElevatedButton(
           ));
     },
     child: Text("Animated Positioned screen "));
+
+Widget animatedPositionedDirectionalWidget(BuildContext context) =>
+    ElevatedButton(
+        onPressed: () {
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => AnimatedPositionedDirectionalScreen(),
+              ));
+        },
+        child: Text("Animated Positioned Directional "));
