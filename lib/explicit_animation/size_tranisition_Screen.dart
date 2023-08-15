@@ -49,15 +49,15 @@ class _SizeTransitionScreenState extends State<SizeTransitionScreen>
           _startAnimation();
         },
         child: Container(
-          width: 100,
-          height: 100,
+          width: 200,
+          height: 200,
           color: Colors.blue,
           child: Center(
             child: SizeTransition(
                 sizeFactor: _animation,
                 child: Container(
-                    width: 60,
-                    height: 60,
+                    width: 100,
+                    height: 100,
                     color: Colors.orange,
                     child: Image.asset('assets/dog.png'))),
           ),
