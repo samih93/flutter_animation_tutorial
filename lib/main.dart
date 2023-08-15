@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_tutorial_animation/explicit_animation/positioned_transition_screen.dart';
+import 'package:flutter_tutorial_animation/explicit_animation/size_tranisition_Screen.dart';
 import 'package:flutter_tutorial_animation/implicit_animation/animated_container_screen.dart';
 import 'package:flutter_tutorial_animation/animation_and_tween_screen.dart';
 import 'package:flutter_tutorial_animation/animation_controller_status_screen.dart';
@@ -131,6 +132,10 @@ class MyHomePAge extends StatelessWidget {
             height: 5,
           ),
           positionedTransitionWidget(context),
+          SizedBox(
+            height: 5,
+          ),
+          sizeTransitionWidget(context),
         ]),
       ),
     );
@@ -277,10 +282,9 @@ Widget animatedListWidget(BuildContext context) => ElevatedButton(
           ));
     },
     child: Text("Animated List "));
+
 Widget positionedTransitionWidget(BuildContext context) => ElevatedButton(
-    style: ButtonStyle(
-        backgroundColor:
-            MaterialStateColor.resolveWith((states) => Colors.red)),
+    style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
     onPressed: () {
       Navigator.push(
           context,
@@ -290,5 +294,19 @@ Widget positionedTransitionWidget(BuildContext context) => ElevatedButton(
     },
     child: Text(
       "Positioned transition ",
+      style: TextStyle(color: Colors.white),
+    ));
+
+Widget sizeTransitionWidget(BuildContext context) => ElevatedButton(
+    style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
+    onPressed: () {
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => SizeTransitionScreen(),
+          ));
+    },
+    child: Text(
+      "Size transition ",
       style: TextStyle(color: Colors.white),
     ));
