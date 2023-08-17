@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_tutorial_animation/explicit_animation/animated_builder_screen.dart';
+import 'package:flutter_tutorial_animation/explicit_animation/fade_transition_screen.dart';
 import 'package:flutter_tutorial_animation/explicit_animation/positioned_transition_screen.dart';
 import 'package:flutter_tutorial_animation/explicit_animation/rotation_transition_screen.dart';
 import 'package:flutter_tutorial_animation/explicit_animation/size_tranisition_Screen.dart';
@@ -146,6 +147,10 @@ class MyHomePAge extends StatelessWidget {
             height: 5,
           ),
           animatedBuilderWidget(context),
+          const SizedBox(
+            height: 5,
+          ),
+          fadeTransiotionWidget(context),
         ]),
       ),
     );
@@ -346,5 +351,18 @@ Widget animatedBuilderWidget(BuildContext context) => ElevatedButton(
     },
     child: const Text(
       "Animated Builder ",
+      style: TextStyle(color: Colors.white),
+    ));
+Widget fadeTransiotionWidget(BuildContext context) => ElevatedButton(
+    style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
+    onPressed: () {
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const FadeTransitionScreen(),
+          ));
+    },
+    child: const Text(
+      "Fade Transition ",
       style: TextStyle(color: Colors.white),
     ));
