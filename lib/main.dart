@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_tutorial_animation/explicit_animation/animated_builder_screen.dart';
 import 'package:flutter_tutorial_animation/explicit_animation/positioned_transition_screen.dart';
 import 'package:flutter_tutorial_animation/explicit_animation/rotation_transition_screen.dart';
 import 'package:flutter_tutorial_animation/explicit_animation/size_tranisition_Screen.dart';
@@ -141,6 +142,10 @@ class MyHomePAge extends StatelessWidget {
             height: 5,
           ),
           rotationTransitionWidget(context),
+          const SizedBox(
+            height: 5,
+          ),
+          animatedBuilderWidget(context),
         ]),
       ),
     );
@@ -328,5 +333,18 @@ Widget rotationTransitionWidget(BuildContext context) => ElevatedButton(
     },
     child: const Text(
       "Rotation transition ",
+      style: TextStyle(color: Colors.white),
+    ));
+Widget animatedBuilderWidget(BuildContext context) => ElevatedButton(
+    style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
+    onPressed: () {
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const AnimatedBuilderScreen(),
+          ));
+    },
+    child: const Text(
+      "Animated Builder ",
       style: TextStyle(color: Colors.white),
     ));
