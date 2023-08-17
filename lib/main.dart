@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_tutorial_animation/explicit_animation/positioned_transition_screen.dart';
+import 'package:flutter_tutorial_animation/explicit_animation/rotation_transition_screen.dart';
 import 'package:flutter_tutorial_animation/explicit_animation/size_tranisition_Screen.dart';
 import 'package:flutter_tutorial_animation/implicit_animation/animated_container_screen.dart';
 import 'package:flutter_tutorial_animation/animation_and_tween_screen.dart';
@@ -49,7 +50,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: MyHomePAge(),
+      home: const MyHomePAge(),
     );
   }
 }
@@ -61,81 +62,85 @@ class MyHomePAge extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Flutter Animation Course"),
+        title: const Text("Flutter Animation Course"),
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 10),
         child: ListView(children: [
           animationControllerStatusWidget(context),
-          SizedBox(
+          const SizedBox(
             height: 5,
           ),
           animationAndTweenWidget(context),
-          SizedBox(
+          const SizedBox(
             height: 5,
           ),
           animationCurvesWidget(context),
-          SizedBox(
+          const SizedBox(
             height: 5,
           ),
           animatedalignDemoWidget(context),
-          SizedBox(
+          const SizedBox(
             height: 5,
           ),
           animatedContainerDemoWidget(context),
-          SizedBox(
+          const SizedBox(
             height: 5,
           ),
           animatedDefaultTextStyleWidget(context),
-          SizedBox(
+          const SizedBox(
             height: 5,
           ),
           animatedOpacityWidget(context),
-          SizedBox(
+          const SizedBox(
             height: 5,
           ),
           animatedPaddingWidget(context),
-          SizedBox(
+          const SizedBox(
             height: 5,
           ),
           animatedPhysicalWidget(context),
-          SizedBox(
+          const SizedBox(
             height: 5,
           ),
           animatedPositionedWidget(context),
-          SizedBox(
+          const SizedBox(
             height: 5,
           ),
           animatedPositionedDirectionalWidget(context),
-          SizedBox(
+          const SizedBox(
             height: 5,
           ),
           animatedCrossFadeWidget(context),
-          SizedBox(
+          const SizedBox(
             height: 5,
           ),
           animatedSwitcherWidget(context),
-          SizedBox(
+          const SizedBox(
             height: 5,
           ),
           animatedListWidget(context),
-          SizedBox(
+          const SizedBox(
             height: 5,
           ),
-          Center(
+          const Center(
             child: Text(
               "Explicit Animation",
               style: TextStyle(color: Colors.red, fontSize: 20),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 5,
           ),
           positionedTransitionWidget(context),
-          SizedBox(
+          const SizedBox(
             height: 5,
           ),
           sizeTransitionWidget(context),
+          const SizedBox(
+            height: 5,
+          ),
+          rotationTransitionWidget(context),
         ]),
       ),
     );
@@ -147,100 +152,100 @@ Widget animationControllerStatusWidget(BuildContext context) => ElevatedButton(
       Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => AnimationControllerStatusScreen(),
+            builder: (context) => const AnimationControllerStatusScreen(),
           ));
     },
-    child: Text("Animation Controller status"));
+    child: const Text("Animation Controller status"));
 
 Widget animationAndTweenWidget(BuildContext context) => ElevatedButton(
     onPressed: () {
       Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => AnimationAndTweenScreen(),
+            builder: (context) => const AnimationAndTweenScreen(),
           ));
     },
-    child: Text("Animation And Tween"));
+    child: const Text("Animation And Tween"));
 
 Widget animationCurvesWidget(BuildContext context) => ElevatedButton(
     onPressed: () {
       Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => AnimationCurvesScreen(),
+            builder: (context) => const AnimationCurvesScreen(),
           ));
     },
-    child: Text("Animation Curves"));
+    child: const Text("Animation Curves"));
 
 Widget animatedalignDemoWidget(BuildContext context) => ElevatedButton(
     onPressed: () {
       Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => AnimatedAlignDemoScreen(),
+            builder: (context) => const AnimatedAlignDemoScreen(),
           ));
     },
-    child: Text("Animation Align Demo"));
+    child: const Text("Animation Align Demo"));
 
 Widget animatedContainerDemoWidget(BuildContext context) => ElevatedButton(
     onPressed: () {
       Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => AnimatedContainerScreen(),
+            builder: (context) => const AnimatedContainerScreen(),
           ));
     },
-    child: Text("Animation Container "));
+    child: const Text("Animation Container "));
 
 Widget animatedDefaultTextStyleWidget(BuildContext context) => ElevatedButton(
     onPressed: () {
       Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => AnimatedDefaultTextStyleScreen(),
+            builder: (context) => const AnimatedDefaultTextStyleScreen(),
           ));
     },
-    child: Text("Animation DefaultTextStyle "));
+    child: const Text("Animation DefaultTextStyle "));
 
 Widget animatedOpacityWidget(BuildContext context) => ElevatedButton(
     onPressed: () {
       Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => AnimatedOpacityScreen(),
+            builder: (context) => const AnimatedOpacityScreen(),
           ));
     },
-    child: Text("Animation Opacity "));
+    child: const Text("Animation Opacity "));
 
 Widget animatedPaddingWidget(BuildContext context) => ElevatedButton(
     onPressed: () {
       Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => AnimatedPaddingScreen(),
+            builder: (context) => const AnimatedPaddingScreen(),
           ));
     },
-    child: Text("Animation Padding screen "));
+    child: const Text("Animation Padding screen "));
 
 Widget animatedPhysicalWidget(BuildContext context) => ElevatedButton(
     onPressed: () {
       Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => AnimatedPhysicalModelScreen(),
+            builder: (context) => const AnimatedPhysicalModelScreen(),
           ));
     },
-    child: Text("Animated physical screen "));
+    child: const Text("Animated physical screen "));
 
 Widget animatedPositionedWidget(BuildContext context) => ElevatedButton(
     onPressed: () {
       Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => AnimatedPositionedScreen(),
+            builder: (context) => const AnimatedPositionedScreen(),
           ));
     },
-    child: Text("Animated Positioned screen "));
+    child: const Text("Animated Positioned screen "));
 
 Widget animatedPositionedDirectionalWidget(BuildContext context) =>
     ElevatedButton(
@@ -248,40 +253,41 @@ Widget animatedPositionedDirectionalWidget(BuildContext context) =>
           Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => AnimatedPositionedDirectionalScreen(),
+                builder: (context) =>
+                    const AnimatedPositionedDirectionalScreen(),
               ));
         },
-        child: Text("Animated Positioned Directional "));
+        child: const Text("Animated Positioned Directional "));
 
 Widget animatedCrossFadeWidget(BuildContext context) => ElevatedButton(
     onPressed: () {
       Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => AnimatedCrossFadeScreen(),
+            builder: (context) => const AnimatedCrossFadeScreen(),
           ));
     },
-    child: Text("Animated Cross Fade "));
+    child: const Text("Animated Cross Fade "));
 
 Widget animatedSwitcherWidget(BuildContext context) => ElevatedButton(
     onPressed: () {
       Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => AnimatedSwitcherScreen(),
+            builder: (context) => const AnimatedSwitcherScreen(),
           ));
     },
-    child: Text("Animated Switcher"));
+    child: const Text("Animated Switcher"));
 
 Widget animatedListWidget(BuildContext context) => ElevatedButton(
     onPressed: () {
       Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => AnimatedListScreen(),
+            builder: (context) => const AnimatedListScreen(),
           ));
     },
-    child: Text("Animated List "));
+    child: const Text("Animated List "));
 
 Widget positionedTransitionWidget(BuildContext context) => ElevatedButton(
     style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
@@ -289,10 +295,10 @@ Widget positionedTransitionWidget(BuildContext context) => ElevatedButton(
       Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => PositionedTransitionScreen(),
+            builder: (context) => const PositionedTransitionScreen(),
           ));
     },
-    child: Text(
+    child: const Text(
       "Positioned transition ",
       style: TextStyle(color: Colors.white),
     ));
@@ -303,10 +309,24 @@ Widget sizeTransitionWidget(BuildContext context) => ElevatedButton(
       Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => SizeTransitionScreen(),
+            builder: (context) => const SizeTransitionScreen(),
           ));
     },
-    child: Text(
+    child: const Text(
       "Size transition ",
+      style: TextStyle(color: Colors.white),
+    ));
+
+Widget rotationTransitionWidget(BuildContext context) => ElevatedButton(
+    style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
+    onPressed: () {
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const RotationTransitionScreen(),
+          ));
+    },
+    child: const Text(
+      "Rotation transition ",
       style: TextStyle(color: Colors.white),
     ));
