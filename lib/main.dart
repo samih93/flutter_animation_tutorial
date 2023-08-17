@@ -1,4 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_tutorial_animation/explicit_animation/positioned_transition_screen.dart';
+import 'package:flutter_tutorial_animation/explicit_animation/size_tranisition_Screen.dart';
+import 'package:flutter_tutorial_animation/implicit_animation/animated_container_screen.dart';
+import 'package:flutter_tutorial_animation/animation_and_tween_screen.dart';
+import 'package:flutter_tutorial_animation/animation_controller_status_screen.dart';
+import 'package:flutter_tutorial_animation/animation_curves_screen.dart';
+import 'package:flutter_tutorial_animation/implicit_animation/animated_cross_Fade.dart';
+import 'package:flutter_tutorial_animation/implicit_animation/animated_default_text_style.dart';
+import 'package:flutter_tutorial_animation/implicit_animation/animated_padding_screen.dart';
+import 'package:flutter_tutorial_animation/implicit_animation/animated_positionned_screen.dart';
+
+import 'implicit_animation/animated_align_widget_screen.dart';
+import 'implicit_animation/animated_list_screen.dart';
+import 'implicit_animation/animated_opacity_demo.dart';
+import 'implicit_animation/animated_physical_model_screen.dart';
+import 'implicit_animation/animated_positioned_directional_screen.dart';
+import 'implicit_animation/animated_switcher_Screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,6 +28,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         // This is the theme of your application.
@@ -31,95 +49,264 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePAge(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-  }
+class MyHomePAge extends StatelessWidget {
+  const MyHomePAge({super.key});
 
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
     return Scaffold(
       appBar: AppBar(
-        // TRY THIS: Try changing the color here to a specific color (to
-        // Colors.amber, perhaps?) and trigger a hot reload to see the AppBar
-        // change color while the other colors stay the same.
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
+        title: Text("Flutter Animation Course"),
       ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          //
-          // TRY THIS: Invoke "debug painting" (choose the "Toggle Debug Paint"
-          // action in the IDE, or press "p" in the console), to see the
-          // wireframe for each widget.
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 10),
+        child: ListView(children: [
+          animationControllerStatusWidget(context),
+          SizedBox(
+            height: 5,
+          ),
+          animationAndTweenWidget(context),
+          SizedBox(
+            height: 5,
+          ),
+          animationCurvesWidget(context),
+          SizedBox(
+            height: 5,
+          ),
+          animatedalignDemoWidget(context),
+          SizedBox(
+            height: 5,
+          ),
+          animatedContainerDemoWidget(context),
+          SizedBox(
+            height: 5,
+          ),
+          animatedDefaultTextStyleWidget(context),
+          SizedBox(
+            height: 5,
+          ),
+          animatedOpacityWidget(context),
+          SizedBox(
+            height: 5,
+          ),
+          animatedPaddingWidget(context),
+          SizedBox(
+            height: 5,
+          ),
+          animatedPhysicalWidget(context),
+          SizedBox(
+            height: 5,
+          ),
+          animatedPositionedWidget(context),
+          SizedBox(
+            height: 5,
+          ),
+          animatedPositionedDirectionalWidget(context),
+          SizedBox(
+            height: 5,
+          ),
+          animatedCrossFadeWidget(context),
+          SizedBox(
+            height: 5,
+          ),
+          animatedSwitcherWidget(context),
+          SizedBox(
+            height: 5,
+          ),
+          animatedListWidget(context),
+          SizedBox(
+            height: 5,
+          ),
+          Center(
+            child: Text(
+              "Explicit Animation",
+              style: TextStyle(color: Colors.red, fontSize: 20),
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-          ],
-        ),
+          ),
+          SizedBox(
+            height: 5,
+          ),
+          positionedTransitionWidget(context),
+          SizedBox(
+            height: 5,
+          ),
+          sizeTransitionWidget(context),
+        ]),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
+
+Widget animationControllerStatusWidget(BuildContext context) => ElevatedButton(
+    onPressed: () {
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => AnimationControllerStatusScreen(),
+          ));
+    },
+    child: Text("Animation Controller status"));
+
+Widget animationAndTweenWidget(BuildContext context) => ElevatedButton(
+    onPressed: () {
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => AnimationAndTweenScreen(),
+          ));
+    },
+    child: Text("Animation And Tween"));
+
+Widget animationCurvesWidget(BuildContext context) => ElevatedButton(
+    onPressed: () {
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => AnimationCurvesScreen(),
+          ));
+    },
+    child: Text("Animation Curves"));
+
+Widget animatedalignDemoWidget(BuildContext context) => ElevatedButton(
+    onPressed: () {
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => AnimatedAlignDemoScreen(),
+          ));
+    },
+    child: Text("Animation Align Demo"));
+
+Widget animatedContainerDemoWidget(BuildContext context) => ElevatedButton(
+    onPressed: () {
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => AnimatedContainerScreen(),
+          ));
+    },
+    child: Text("Animation Container "));
+
+Widget animatedDefaultTextStyleWidget(BuildContext context) => ElevatedButton(
+    onPressed: () {
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => AnimatedDefaultTextStyleScreen(),
+          ));
+    },
+    child: Text("Animation DefaultTextStyle "));
+
+Widget animatedOpacityWidget(BuildContext context) => ElevatedButton(
+    onPressed: () {
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => AnimatedOpacityScreen(),
+          ));
+    },
+    child: Text("Animation Opacity "));
+
+Widget animatedPaddingWidget(BuildContext context) => ElevatedButton(
+    onPressed: () {
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => AnimatedPaddingScreen(),
+          ));
+    },
+    child: Text("Animation Padding screen "));
+
+Widget animatedPhysicalWidget(BuildContext context) => ElevatedButton(
+    onPressed: () {
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => AnimatedPhysicalModelScreen(),
+          ));
+    },
+    child: Text("Animated physical screen "));
+
+Widget animatedPositionedWidget(BuildContext context) => ElevatedButton(
+    onPressed: () {
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => AnimatedPositionedScreen(),
+          ));
+    },
+    child: Text("Animated Positioned screen "));
+
+Widget animatedPositionedDirectionalWidget(BuildContext context) =>
+    ElevatedButton(
+        onPressed: () {
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => AnimatedPositionedDirectionalScreen(),
+              ));
+        },
+        child: Text("Animated Positioned Directional "));
+
+Widget animatedCrossFadeWidget(BuildContext context) => ElevatedButton(
+    onPressed: () {
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => AnimatedCrossFadeScreen(),
+          ));
+    },
+    child: Text("Animated Cross Fade "));
+
+Widget animatedSwitcherWidget(BuildContext context) => ElevatedButton(
+    onPressed: () {
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => AnimatedSwitcherScreen(),
+          ));
+    },
+    child: Text("Animated Switcher"));
+
+Widget animatedListWidget(BuildContext context) => ElevatedButton(
+    onPressed: () {
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => AnimatedListScreen(),
+          ));
+    },
+    child: Text("Animated List "));
+
+Widget positionedTransitionWidget(BuildContext context) => ElevatedButton(
+    style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
+    onPressed: () {
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => PositionedTransitionScreen(),
+          ));
+    },
+    child: Text(
+      "Positioned transition ",
+      style: TextStyle(color: Colors.white),
+    ));
+
+Widget sizeTransitionWidget(BuildContext context) => ElevatedButton(
+    style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
+    onPressed: () {
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => SizeTransitionScreen(),
+          ));
+    },
+    child: Text(
+      "Size transition ",
+      style: TextStyle(color: Colors.white),
+    ));
