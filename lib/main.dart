@@ -15,6 +15,7 @@ import 'package:flutter_tutorial_animation/implicit_animation/animated_padding_s
 import 'package:flutter_tutorial_animation/implicit_animation/animated_positionned_screen.dart';
 
 import 'explicit_animation/default_text_style_transition.dart';
+import 'explicit_animation/indexed_stack_screen.dart';
 import 'implicit_animation/animated_align_widget_screen.dart';
 import 'implicit_animation/animated_list_screen.dart';
 import 'implicit_animation/animated_opacity_demo.dart';
@@ -161,6 +162,14 @@ class MyHomePAge extends StatelessWidget {
             height: 5,
           ),
           defaultTextStyleTransitionWidget(context),
+          const SizedBox(
+            height: 5,
+          ),
+          defaultTextStyleTransitionWidget(context),
+          const SizedBox(
+            height: 5,
+          ),
+          indexedStackTransitionWidget(context),
         ]),
       ),
     );
@@ -400,5 +409,18 @@ Widget defaultTextStyleTransitionWidget(BuildContext context) => ElevatedButton(
     },
     child: const Text(
       "Default Text Style Transition ",
+      style: TextStyle(color: Colors.white),
+    ));
+Widget indexedStackTransitionWidget(BuildContext context) => ElevatedButton(
+    style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
+    onPressed: () {
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const IndexedStackTransitionScreen(),
+          ));
+    },
+    child: const Text(
+      "indexed stack transition",
       style: TextStyle(color: Colors.white),
     ));
