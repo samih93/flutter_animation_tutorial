@@ -39,8 +39,9 @@ class _defaultTextStyleTransitionScreenState
   setAnimations() {
     if (_animationController.status == AnimationStatus.completed) {
       _animationController.reverse();
-    } else
+    } else {
       _animationController.forward();
+    }
   }
 
   revereseAnimation() {}
