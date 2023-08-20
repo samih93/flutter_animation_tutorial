@@ -4,6 +4,7 @@ import 'package:flutter_tutorial_animation/explicit_animation/fade_transition_sc
 import 'package:flutter_tutorial_animation/explicit_animation/positioned_transition_screen.dart';
 import 'package:flutter_tutorial_animation/explicit_animation/rotation_transition_screen.dart';
 import 'package:flutter_tutorial_animation/explicit_animation/size_tranisition_Screen.dart';
+import 'package:flutter_tutorial_animation/explicit_animation/tween_animation_builder.dart';
 import 'package:flutter_tutorial_animation/implicit_animation/animated_container_screen.dart';
 import 'package:flutter_tutorial_animation/animation_and_tween_screen.dart';
 import 'package:flutter_tutorial_animation/animation_controller_status_screen.dart';
@@ -151,6 +152,10 @@ class MyHomePAge extends StatelessWidget {
             height: 5,
           ),
           fadeTransiotionWidget(context),
+          const SizedBox(
+            height: 5,
+          ),
+          tweenAnimationBuilderWidget(context),
         ]),
       ),
     );
@@ -364,5 +369,18 @@ Widget fadeTransiotionWidget(BuildContext context) => ElevatedButton(
     },
     child: const Text(
       "Fade Transition ",
+      style: TextStyle(color: Colors.white),
+    ));
+Widget tweenAnimationBuilderWidget(BuildContext context) => ElevatedButton(
+    style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
+    onPressed: () {
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const TweenAnimationBuilderScreen(),
+          ));
+    },
+    child: const Text(
+      "Tween Animation ",
       style: TextStyle(color: Colors.white),
     ));
