@@ -15,6 +15,7 @@ import 'package:flutter_tutorial_animation/implicit_animation/animated_positionn
 import 'package:flutter_tutorial_animation/page_transitions/page_fade_transition.dart';
 import 'package:flutter_tutorial_animation/page_transitions/page_rotation_transition.dart';
 import 'package:flutter_tutorial_animation/page_transitions/page_scale_transition.dart';
+import 'package:flutter_tutorial_animation/page_transitions/page_size_transition.dart';
 import 'package:flutter_tutorial_animation/page_transitions/page_slide_transition.dart';
 import 'package:flutter_tutorial_animation/page_transitions/page_two.dart';
 
@@ -168,19 +169,23 @@ class MyHomePAge extends StatelessWidget {
           const SizedBox(
             height: 5,
           ),
-          pageFadeTransiotionWidget(context),
+          pageFadeTransitionWidget(context),
           const SizedBox(
             height: 5,
           ),
-          pageScaleTransiotionWidget(context),
+          pageScaleTransitionWidget(context),
           const SizedBox(
             height: 5,
           ),
-          pageRotationTransiotionWidget(context),
+          pageRotationTransitionWidget(context),
           const SizedBox(
             height: 5,
           ),
-          pageSlideTransiotionWidget(context),
+          pageSlideTransitionWidget(context),
+          const SizedBox(
+            height: 5,
+          ),
+          pageSizeTransitionWidget(context),
           const SizedBox(
             height: 20,
           ),
@@ -400,7 +405,7 @@ Widget fadeTransiotionWidget(BuildContext context) => ElevatedButton(
       style: TextStyle(color: Colors.white),
     ));
 
-Widget pageFadeTransiotionWidget(BuildContext context) => ElevatedButton(
+Widget pageFadeTransitionWidget(BuildContext context) => ElevatedButton(
     style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
     onPressed: () {
       Navigator.push(
@@ -413,7 +418,7 @@ Widget pageFadeTransiotionWidget(BuildContext context) => ElevatedButton(
       "Page Fade Transition ",
       style: TextStyle(color: Colors.white),
     ));
-Widget pageScaleTransiotionWidget(BuildContext context) => ElevatedButton(
+Widget pageScaleTransitionWidget(BuildContext context) => ElevatedButton(
     style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
     onPressed: () {
       Navigator.push(
@@ -426,7 +431,7 @@ Widget pageScaleTransiotionWidget(BuildContext context) => ElevatedButton(
       "Page Scale Transition ",
       style: TextStyle(color: Colors.white),
     ));
-Widget pageRotationTransiotionWidget(BuildContext context) => ElevatedButton(
+Widget pageRotationTransitionWidget(BuildContext context) => ElevatedButton(
     style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
     onPressed: () {
       Navigator.push(
@@ -439,7 +444,7 @@ Widget pageRotationTransiotionWidget(BuildContext context) => ElevatedButton(
       "Page Rotation Transition ",
       style: TextStyle(color: Colors.white),
     ));
-Widget pageSlideTransiotionWidget(BuildContext context) => ElevatedButton(
+Widget pageSlideTransitionWidget(BuildContext context) => ElevatedButton(
     style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
     onPressed: () {
       Navigator.push(
@@ -450,5 +455,18 @@ Widget pageSlideTransiotionWidget(BuildContext context) => ElevatedButton(
     },
     child: const Text(
       "Page Slide Transition ",
+      style: TextStyle(color: Colors.white),
+    ));
+Widget pageSizeTransitionWidget(BuildContext context) => ElevatedButton(
+    style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
+    onPressed: () {
+      Navigator.push(
+          context,
+          PageSizeTransition(
+            page: const PageTwo(),
+          ));
+    },
+    child: const Text(
+      "Page Size Transition ",
       style: TextStyle(color: Colors.white),
     ));
