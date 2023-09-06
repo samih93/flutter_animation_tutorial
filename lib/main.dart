@@ -12,6 +12,13 @@ import 'package:flutter_tutorial_animation/implicit_animation/animated_cross_Fad
 import 'package:flutter_tutorial_animation/implicit_animation/animated_default_text_style.dart';
 import 'package:flutter_tutorial_animation/implicit_animation/animated_padding_screen.dart';
 import 'package:flutter_tutorial_animation/implicit_animation/animated_positionned_screen.dart';
+import 'package:flutter_tutorial_animation/page_transitions/page_fade_transition.dart';
+import 'package:flutter_tutorial_animation/page_transitions/page_mix_fade_transition.dart';
+import 'package:flutter_tutorial_animation/page_transitions/page_rotation_transition.dart';
+import 'package:flutter_tutorial_animation/page_transitions/page_scale_transition.dart';
+import 'package:flutter_tutorial_animation/page_transitions/page_size_transition.dart';
+import 'package:flutter_tutorial_animation/page_transitions/page_slide_transition.dart';
+import 'package:flutter_tutorial_animation/page_transitions/page_two.dart';
 
 import 'implicit_animation/animated_align_widget_screen.dart';
 import 'implicit_animation/animated_list_screen.dart';
@@ -151,6 +158,42 @@ class MyHomePAge extends StatelessWidget {
             height: 5,
           ),
           fadeTransiotionWidget(context),
+          const SizedBox(
+            height: 5,
+          ),
+          const Center(
+            child: Text(
+              "Page Transitions",
+              style: TextStyle(color: Colors.blue, fontSize: 20),
+            ),
+          ),
+          const SizedBox(
+            height: 5,
+          ),
+          pageFadeTransitionWidget(context),
+          const SizedBox(
+            height: 5,
+          ),
+          pageScaleTransitionWidget(context),
+          const SizedBox(
+            height: 5,
+          ),
+          pageRotationTransitionWidget(context),
+          const SizedBox(
+            height: 5,
+          ),
+          pageSlideTransitionWidget(context),
+          const SizedBox(
+            height: 5,
+          ),
+          pageSizeTransitionWidget(context),
+          const SizedBox(
+            height: 5,
+          ),
+          pageMixFadeSizeTransitionWidget(context),
+          const SizedBox(
+            height: 20,
+          ),
         ]),
       ),
     );
@@ -364,5 +407,84 @@ Widget fadeTransiotionWidget(BuildContext context) => ElevatedButton(
     },
     child: const Text(
       "Fade Transition ",
+      style: TextStyle(color: Colors.white),
+    ));
+
+Widget pageFadeTransitionWidget(BuildContext context) => ElevatedButton(
+    style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
+    onPressed: () {
+      Navigator.push(
+          context,
+          PageFadeTransition(
+            page: const PageTwo(),
+          ));
+    },
+    child: const Text(
+      "Page Fade Transition ",
+      style: TextStyle(color: Colors.white),
+    ));
+Widget pageScaleTransitionWidget(BuildContext context) => ElevatedButton(
+    style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
+    onPressed: () {
+      Navigator.push(
+          context,
+          PageScaleTransition(
+            page: const PageTwo(),
+          ));
+    },
+    child: const Text(
+      "Page Scale Transition ",
+      style: TextStyle(color: Colors.white),
+    ));
+Widget pageRotationTransitionWidget(BuildContext context) => ElevatedButton(
+    style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
+    onPressed: () {
+      Navigator.push(
+          context,
+          PageRotationTransition(
+            page: const PageTwo(),
+          ));
+    },
+    child: const Text(
+      "Page Rotation Transition ",
+      style: TextStyle(color: Colors.white),
+    ));
+Widget pageSlideTransitionWidget(BuildContext context) => ElevatedButton(
+    style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
+    onPressed: () {
+      Navigator.push(
+          context,
+          PageSlideTransition(
+            page: const PageTwo(),
+          ));
+    },
+    child: const Text(
+      "Page Slide Transition ",
+      style: TextStyle(color: Colors.white),
+    ));
+Widget pageSizeTransitionWidget(BuildContext context) => ElevatedButton(
+    style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
+    onPressed: () {
+      Navigator.push(
+          context,
+          PageSizeTransition(
+            page: const PageTwo(),
+          ));
+    },
+    child: const Text(
+      "Page Size Transition ",
+      style: TextStyle(color: Colors.white),
+    ));
+Widget pageMixFadeSizeTransitionWidget(BuildContext context) => ElevatedButton(
+    style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
+    onPressed: () {
+      Navigator.push(
+          context,
+          PageMixFadeSizeTransition(
+            page: const PageTwo(),
+          ));
+    },
+    child: const Text(
+      "Mix Fade Page Size Transition ",
       style: TextStyle(color: Colors.white),
     ));
