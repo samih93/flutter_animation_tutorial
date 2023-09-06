@@ -11,7 +11,7 @@ class PageScaleTransition extends PageRouteBuilder {
                   CurvedAnimation(parent: animation, curve: Curves.easeInOut));
               return ScaleTransition(
                 scale: myAnimation,
-                child: child,
+                child: FadeTransition(opacity: myAnimation, child: child),
               );
             });
 }
