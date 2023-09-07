@@ -12,6 +12,7 @@ import 'package:flutter_tutorial_animation/implicit_animation/animated_cross_Fad
 import 'package:flutter_tutorial_animation/implicit_animation/animated_default_text_style.dart';
 import 'package:flutter_tutorial_animation/implicit_animation/animated_padding_screen.dart';
 import 'package:flutter_tutorial_animation/implicit_animation/animated_positionned_screen.dart';
+import 'package:flutter_tutorial_animation/more%20animation/custom_paint_animation.dart';
 import 'package:flutter_tutorial_animation/page_transitions/page_fade_transition.dart';
 import 'package:flutter_tutorial_animation/page_transitions/page_mix_fade_transition.dart';
 import 'package:flutter_tutorial_animation/page_transitions/page_mix_scale_rotate_transition.dart';
@@ -196,6 +197,10 @@ class MyHomePAge extends StatelessWidget {
             height: 5,
           ),
           pageMixScaleRotateTransitionWidget(context),
+          const SizedBox(
+            height: 5,
+          ),
+          customPaintAniamtionWidget(context),
           const SizedBox(
             height: 20,
           ),
@@ -507,3 +512,17 @@ Widget pageMixScaleRotateTransitionWidget(BuildContext context) =>
           "Mix Scale Rotate Transition ",
           style: TextStyle(color: Colors.white),
         ));
+
+Widget customPaintAniamtionWidget(BuildContext context) => ElevatedButton(
+    style: ElevatedButton.styleFrom(backgroundColor: Colors.green),
+    onPressed: () {
+      Navigator.push(
+          context,
+          PageMixScaleRotateTransition(
+            page: const CustomPaintAnimationScreen(),
+          ));
+    },
+    child: const Text(
+      "Custom Painter Animation ",
+      style: TextStyle(color: Colors.white),
+    ));
