@@ -14,6 +14,7 @@ import 'package:flutter_tutorial_animation/implicit_animation/animated_padding_s
 import 'package:flutter_tutorial_animation/implicit_animation/animated_positionned_screen.dart';
 import 'package:flutter_tutorial_animation/page_transitions/page_fade_transition.dart';
 import 'package:flutter_tutorial_animation/page_transitions/page_mix_fade_transition.dart';
+import 'package:flutter_tutorial_animation/page_transitions/page_mix_scale_rotate_transition.dart';
 import 'package:flutter_tutorial_animation/page_transitions/page_rotation_transition.dart';
 import 'package:flutter_tutorial_animation/page_transitions/page_scale_transition.dart';
 import 'package:flutter_tutorial_animation/page_transitions/page_size_transition.dart';
@@ -191,6 +192,10 @@ class MyHomePAge extends StatelessWidget {
             height: 5,
           ),
           pageMixFadeSizeTransitionWidget(context),
+          const SizedBox(
+            height: 5,
+          ),
+          pageMixScaleRotateTransitionWidget(context),
           const SizedBox(
             height: 20,
           ),
@@ -488,3 +493,17 @@ Widget pageMixFadeSizeTransitionWidget(BuildContext context) => ElevatedButton(
       "Mix Fade Page Size Transition ",
       style: TextStyle(color: Colors.white),
     ));
+Widget pageMixScaleRotateTransitionWidget(BuildContext context) =>
+    ElevatedButton(
+        style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
+        onPressed: () {
+          Navigator.push(
+              context,
+              PageMixScaleRotateTransition(
+                page: const PageTwo(),
+              ));
+        },
+        child: const Text(
+          "Mix Scale Rotate Transition ",
+          style: TextStyle(color: Colors.white),
+        ));
