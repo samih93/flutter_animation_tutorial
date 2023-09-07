@@ -38,17 +38,38 @@ class _CustomPaintAnimationState extends State<CustomPaintAnimationScreen>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text("custom painter animation")),
-      body: Center(
-          child: AnimatedBuilder(
-        animation: _animationController,
-        builder: (BuildContext context, Widget? child) {
-          return CustomPaint(
-            painter: CirclePainter(
-                _sizeanimation.value, _colorAnimation.value ?? Colors.red),
-            size: Size.square(200),
-          );
-        },
-      )),
+      body: SizedBox(
+        width: double.infinity,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            AnimatedBuilder(
+              animation: _animationController,
+              builder: (BuildContext context, Widget? child) {
+                return CustomPaint(
+                  painter: CirclePainter(_sizeanimation.value,
+                      _colorAnimation.value ?? Colors.red),
+                  size: Size.square(200),
+                );
+              },
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            AnimatedBuilder(
+              animation: _animationController,
+              builder: (BuildContext context, Widget? child) {
+                return CustomPaint(
+                  painter: SquarePainter(_sizeanimation.value,
+                      _colorAnimation.value ?? Colors.red),
+                  size: Size.square(200),
+                );
+              },
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
@@ -68,6 +89,29 @@ class CirclePainter extends CustomPainter {
 
   @override
   bool shouldRepaint(CirclePainter olddelagate) {
+    // TODO: implement shouldRepaint
+    return (_size != olddelagate._size || _color != olddelagate._color);
+  }
+}
+
+class SquarePainter extends CustomPainter {
+  final double _size;
+  final Color _color;
+
+  SquarePainter(this._size, this._color);
+  @override
+  void paint(Canvas canvas, Size size) {
+    final paint = Paint();
+    paint.color = _color;
+    paint.style = PaintingStyle.fill;
+    canvas.drawRect(
+        Rect.fromCircle(
+            center: Offset(size.width / 2, size.height / 2), radius: _size),
+        paint);
+  }
+
+  @override
+  bool shouldRepaint(SquarePainter olddelagate) {
     // TODO: implement shouldRepaint
     return (_size != olddelagate._size || _color != olddelagate._color);
   }
