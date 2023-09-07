@@ -13,6 +13,7 @@ import 'package:flutter_tutorial_animation/implicit_animation/animated_default_t
 import 'package:flutter_tutorial_animation/implicit_animation/animated_padding_screen.dart';
 import 'package:flutter_tutorial_animation/implicit_animation/animated_positionned_screen.dart';
 import 'package:flutter_tutorial_animation/more%20animation/custom_paint_animation.dart';
+import 'package:flutter_tutorial_animation/more%20animation/lottie_slider_screen.dart';
 import 'package:flutter_tutorial_animation/page_transitions/page_fade_transition.dart';
 import 'package:flutter_tutorial_animation/page_transitions/page_mix_fade_transition.dart';
 import 'package:flutter_tutorial_animation/page_transitions/page_mix_scale_rotate_transition.dart';
@@ -201,6 +202,14 @@ class MyHomePAge extends StatelessWidget {
             height: 5,
           ),
           customPaintAniamtionWidget(context),
+          const SizedBox(
+            height: 5,
+          ),
+          customPaintAniamtionWidget(context),
+          const SizedBox(
+            height: 5,
+          ),
+          lottieSliderAnimationWidget(context),
           const SizedBox(
             height: 20,
           ),
@@ -524,5 +533,19 @@ Widget customPaintAniamtionWidget(BuildContext context) => ElevatedButton(
     },
     child: const Text(
       "Custom Painter Animation ",
+      style: TextStyle(color: Colors.white),
+    ));
+
+Widget lottieSliderAnimationWidget(BuildContext context) => ElevatedButton(
+    style: ElevatedButton.styleFrom(backgroundColor: Colors.green),
+    onPressed: () {
+      Navigator.push(
+          context,
+          PageMixScaleRotateTransition(
+            page: const LottieSliderScreen(),
+          ));
+    },
+    child: const Text(
+      "Lottie Slider Animation ",
       style: TextStyle(color: Colors.white),
     ));
