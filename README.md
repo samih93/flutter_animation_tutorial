@@ -1,16 +1,4 @@
 # flutter_tutorial_animation
+![Capture](https://github.com/samih93/flutter_animation_tutorial/assets/78031951/bb1aea94-4366-4296-8e66-eb85fdd42afd)
+![Capture1](https://github.com/samih93/flutter_animation_tutorial/assets/78031951/7a545131-fd03-4b32-a0d1-a0b86a063b1b)
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
